@@ -1,0 +1,7 @@
+Mapping Map project code: created for the user.
+
+Third-party dependency:
+SheetJS Community Edition
+https://sheetjs.com/
+Apache License 2.0
+The browser build is loaded from the official SheetJS CDN.
