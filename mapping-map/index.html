@@ -286,10 +286,34 @@
                   <textarea id="areas" rows="3" placeholder="Garden Town Lahore, Barket Market Lahore, Gulberg Lahore"></textarea>
                   <small>Comma-separated or one per line. Each area is exported on its own line.</small>
                 </label>
-                <label class="field">
-                  <span>Years of Experience</span>
-                  <div class="input-shell"><input id="yearsExperience" class="no-spinner" type="number" inputmode="numeric" min="0" placeholder="10" /></div>
-                </label>
+
+
+
+                <div class="field">
+  <span>Years of Experience</span>
+
+  <div class="input-shell">
+    <input
+      id="yearsExperience"
+      class="no-spinner"
+      type="number"
+      inputmode="numeric"
+      min="0"
+      placeholder="10"
+    />
+  </div>
+
+  <label class="experience-check">
+    <input id="experienceNotProvided" type="checkbox" />
+    <span>Client has not provided exact years</span>
+  </label>
+
+  <div id="multipleExperienceLine" class="experience-line hidden">
+    Multiple Years of Experience
+  </div>
+</div>
+
+                
                 <label class="field">
                   <span>Business Hours</span>
                   <div class="input-shell"><input id="hours" type="text" placeholder="Mon–Fri 9:00 AM–6:00 PM" /></div>
