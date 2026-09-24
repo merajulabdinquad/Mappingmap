@@ -242,3 +242,42 @@ textarea, select { border: 1px solid #d6e0e9; border-radius: 10px; transition: b
   .result-summary { grid-template-columns: 1fr 1fr; }.preview-downloads { grid-template-columns: 1fr; }
 }
 .field-foot strong.has-error { color: #b23f50; background: #fff0f2; }
+
+
+
+
+
+/* Experience fallback option */
+.experience-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #61768a;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.experience-check input {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  accent-color: #1881cd;
+  cursor: pointer;
+}
+
+.experience-line {
+  padding: 9px 11px;
+  border: 1px solid #d9e6ef;
+  border-radius: 9px;
+  background: #f7fbfe;
+  color: #49677f;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.input-shell input:disabled {
+  background: #f4f7f9;
+  color: #9aa8b4;
+  cursor: not-allowed;
+}
