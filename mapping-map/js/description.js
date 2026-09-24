@@ -44,9 +44,11 @@
     const areas = linesToList(data.areas);
     if (areas.length) parts.push(`Sub Areas:\n${areas.join("\n")}`);
 
-    if (String(data.yearsExperience || "").trim()) {
-      parts.push(`${data.yearsExperience} Years of Experience`);
-    }
+ if (data.experienceNotProvided) {
+  parts.push("Multiple Years of Experience");
+} else if (String(data.yearsExperience || "").trim()) {
+  parts.push(`${data.yearsExperience} Years of Experience`);
+}
 
     return parts.filter(Boolean).join("\n\n");
   }
