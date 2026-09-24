@@ -16,6 +16,9 @@
   const completionText = document.getElementById("completionText");
   const customCountLive = document.getElementById("customCountLive");
   const customCoordinatesInput = document.getElementById("customCoordinates");
+  const yearsExperienceInput = document.getElementById("yearsExperience");
+  const experienceNotProvidedInput = document.getElementById("experienceNotProvided");
+  const multipleExperienceLine = document.getElementById("multipleExperienceLine");
 
   let generatedRows = [];
   let generatedData = null;
@@ -48,6 +51,7 @@
       services: value("services"),
       areas: value("areas"),
       yearsExperience: value("yearsExperience"),
+      experienceNotProvided: experienceNotProvidedInput.checked,
       hours: value("hours"),
       facebook: value("facebook"),
       instagram: value("instagram"),
@@ -97,6 +101,21 @@
     if (completionText) completionText.textContent = `${percent}%`;
   }
 
+  function updateExperienceMode() {
+  const exactYearsNotProvided = experienceNotProvidedInput.checked;
+
+  yearsExperienceInput.disabled = exactYearsNotProvided;
+
+  if (exactYearsNotProvided) {
+    yearsExperienceInput.value = "";
+  }
+
+  multipleExperienceLine.classList.toggle(
+    "hidden",
+    !exactYearsNotProvided
+  );
+}
+  
   function updateCustomCount() {
     if (!customCountLive || !customCoordinatesInput) return;
 
@@ -255,6 +274,7 @@
       updatePinSpacing();
       updateCompletion();
       updateCustomCount();
+      updateExperienceMode();
     }, 0);
   });
 
@@ -264,8 +284,13 @@
   form.addEventListener("input", updateCompletion);
   form.addEventListener("change", updateCompletion);
   customCoordinatesInput.addEventListener("input", updateCustomCount);
+  experienceNotProvidedInput.addEventListener(
+  "change",
+  updateExperienceMode
+);
 
   updatePinSpacing();
   updateCompletion();
   updateCustomCount();
+  updateExperienceMode();
 })();
